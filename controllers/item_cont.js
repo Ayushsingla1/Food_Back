@@ -8,7 +8,6 @@ exports.ItemC = async(req,res)=>{
             data : response,
             message : "Entry Created"
         })
-        console.log("Ho gya")
         
     } catch (error) {
         console.log(error)

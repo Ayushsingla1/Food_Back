@@ -9,8 +9,9 @@ function isValidEmail(email) {
 exports.Sign = async(req,res)=>{
     try{
         const {name,email,password,cpassword} = req.body;
+        const memail = email[0].toLowerCase() + email.slice(1);
         try{
-            const duplicate = await SingIn.findOne({email});
+            const duplicate = await SingIn.findOne({memail});
             console.log(duplicate);
             if(duplicate){
                return res.status(500).json({
@@ -18,7 +19,7 @@ exports.Sign = async(req,res)=>{
                     message : 'Account already exists, Please Login',
                 })
             }
-            else if(!isValidEmail(email)){
+            else if(!isValidEmail(memail)){
                 return res.status(404).json(
                     {
                         success : false,
@@ -38,7 +39,7 @@ exports.Sign = async(req,res)=>{
                         })
                     }
                     try{
-                        const response = await SingIn.create({name,email,password : hashedPassword,cpassword : hashedPassword2});
+                        const response = await SingIn.create({name,email : memail,password : hashedPassword,cpassword : hashedPassword2});
                         return res.status(200).json(
                             {
                                 success : true,
