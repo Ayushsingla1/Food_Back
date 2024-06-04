@@ -13,7 +13,7 @@
             "dest" : "index.js",
             "methods" : ["GET","POST","PUT"],
             "headers" : {
-                "Access-Control-Allow-Origin" : "https://food-dev-phi.vercel.app"
+                "Access-Control-Allow-Origin" : "*"
             }
         }
     ]
