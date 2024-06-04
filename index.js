@@ -8,7 +8,7 @@ app.use(cookieparser())
 
 app.use(cors(
     {
-        origin : ["https://food-dev-phi.vercel.app/"],
+        origin : ["https://food-dev-phi.vercel.app"],
         methods : ["GET","POST"],
         credentials : true,
     }
