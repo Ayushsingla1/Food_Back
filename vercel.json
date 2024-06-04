@@ -11,9 +11,9 @@
             "src" : "/(.*)",
             "dest" : "index.js"
             "dest" : "index.js",
-            "methods" : ["GET","POST"],
+            "methods" : ["GET","POST","PUT"],
             "headers" : {
-                "Access-Control-Allow-Origin" : "*"
+                "Access-Control-Allow-Origin" : "https://food-dev-phi.vercel.app"
             }
         }
     ]
